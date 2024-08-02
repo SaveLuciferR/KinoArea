@@ -1,0 +1,23 @@
+:root {
+  --color-primary: #3657CB;
+  --color-primary-opacity: rgba(var(--color-primary), 0.3);
+  --color-second: #ffffff;
+
+  --danger: #CB3F36;
+  --danger-opacity: rgba(var(--danger), 0.2);
+  --warning: #F2F60F;
+  --good: #4BCB36;
+  --good-opacity: rgba(var(--good), 0.3);
+
+  --background-primary: #1E2538;
+  --background-second: #191E2E;
+  --background-button: #1B2133;
+  --bachground-arrow: #100F14;
+
+
+  --text-primary: #151A26;
+  --text-second: rgba(var(--second-color), 0.7);
+  --text-third: #4F5B7C;
+  --text-unhover: rgba(255, 255, 255, 0.3);
+
+}
