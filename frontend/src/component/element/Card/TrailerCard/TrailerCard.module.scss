@@ -1,0 +1,10 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 8px;
+
+  width: 340px;
+  height: auto;
+}

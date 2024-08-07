@@ -1,0 +1,13 @@
+.card {
+  display: block;
+  width: 340px;
+  height: auto;
+}
+
+.info {
+  padding-top: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

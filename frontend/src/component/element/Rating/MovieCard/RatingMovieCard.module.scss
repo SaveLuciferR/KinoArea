@@ -1,0 +1,28 @@
+.rating {
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  margin: 12px;
+
+  padding: 8px 12px;
+
+  border-radius: 8px;
+
+  &__text {
+    color: var(--color-second);
+  }
+
+  &.danger {
+
+  }
+
+  &.warning {
+
+  }
+
+  &.good {
+
+  }
+}

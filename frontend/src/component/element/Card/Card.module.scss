@@ -1,0 +1,51 @@
+.card {
+  position: relative;
+
+  border-radius: 12px;
+  background-color: var(--color-primary);
+
+  width: auto;
+  height: auto;
+
+  overflow: hidden;
+
+  & > img {
+    object-fit: cover;
+
+    transition: all 0.4s ease-in-out;
+  }
+
+  &.element {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    z-index: 1000;
+
+    background: none;
+    opacity: 0;
+
+    transition: all 0.4s ease-out;
+  }
+
+  &.hover {
+    & > .element {
+      opacity: 1;
+    }
+
+    & > img {
+      opacity: 0.3;
+    }
+  }
+
+  &.unhover {
+
+    & > .button {
+      opacity: 0;
+    }
+
+    & > img {
+      opacity: 1;
+    }
+  }
+}

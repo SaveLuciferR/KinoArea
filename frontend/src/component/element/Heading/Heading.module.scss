@@ -1,0 +1,18 @@
+.heading {
+  color: var(--color-second);
+
+  &-page {
+    font-size: 65px;
+    font-weight: 900;
+  }
+
+  &-card {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &-footer {
+    font-size: 45px;
+    font-weight: 900;
+  }
+}

@@ -1,11 +1,13 @@
 :root {
   --color-primary: #3657CB;
-  --color-primary-opacity: rgba(var(--color-primary), 0.3);
+  --color-primary-opacity: rgba(54, 87, 203, 0.7);
   --color-second: #ffffff;
+  --color-second-opacity: rgba(255, 255, 255, 0.8);
 
   --danger: #CB3F36;
   --danger-opacity: rgba(var(--danger), 0.2);
-  --warning: #F2F60F;
+  --warning: #CB6C36;
+  --warning-info: #F2F60F;
   --good: #4BCB36;
   --good-opacity: rgba(var(--good), 0.3);
 
