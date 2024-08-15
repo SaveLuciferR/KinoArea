@@ -2,3 +2,39 @@
   width: 444px;
   height: 444px;
 }
+
+.info {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  & > h2 {
+    font-size: 27px;
+    font-weight: 700;
+  }
+
+  & > h3 {
+    opacity: 0.35;
+
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  & > .age {
+    color: var(--warning-info);
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
+
+.position {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+}

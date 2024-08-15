@@ -1,0 +1,29 @@
+.input {
+  all: unset;
+
+  border-radius: 12px;
+
+  transition: all 0.4s ease-out;
+
+  &.footer {
+    border: 2px var(--color-second) solid;
+    background-color: var(--color-second);
+
+    opacity: 1;
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 400;
+
+    padding: 28px 20px;
+    width: 425px;
+
+    &::placeholder {
+      color: var(--background-second);
+      opacity: 0.6;
+    }
+
+    &:focus {
+      border: 2px var(--warning-info) solid;
+    }
+  }
+}

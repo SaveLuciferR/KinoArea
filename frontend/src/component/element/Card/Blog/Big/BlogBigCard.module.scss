@@ -1,0 +1,64 @@
+.card {
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  position: absolute;
+  bottom: 52px;
+  left: 32px;
+  z-index: 5;
+
+  max-width: 900px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 12px;
+
+  & > h2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    color: var(--color-second);
+    font-size: 44px;
+    font-weight: 900;
+  }
+
+  & > p {
+    color: var(--color-second);
+    font-size: 20px;
+    font-weight: 400;
+    text-align: justify;
+
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.stat {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 5;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+
+  color: var(--color-second);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.stat_element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+}

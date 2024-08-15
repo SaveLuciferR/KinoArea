@@ -37,7 +37,11 @@ const IndexPopularMovie = () => {
 					<Button color={ButtonColor.withoutBackground} size={ButtonSize.none}>2019</Button>
 				</nav>
 			</div>
-			<Slider slides={popularMovieComponents} type={SliderType.controls} />
+			<Slider
+				slides={popularMovieComponents}
+				type={SliderType.controls}
+				withHeading={false}
+			/>
 		</div>
 	);
 };

@@ -13,8 +13,12 @@
     font-size: 24px;
     font-weight: 800;
 
-    & > span {
+    & > .primary {
       color: var(--color-primary);
+    }
+
+    & > .secondary {
+      color: var(--color-second);
     }
   }
 }

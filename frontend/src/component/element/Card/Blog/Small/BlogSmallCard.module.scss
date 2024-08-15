@@ -1,0 +1,45 @@
+.card {
+  width: 250px;
+  height: 185px;
+}
+
+.info {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 5;
+
+  max-width: 900px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 12px;
+
+  & > h2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+
+    color: var(--color-second);
+    font-size: 18px;
+    font-weight: 900;
+  }
+}
+
+.stat {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 5;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+
+  color: var(--color-second);
+  font-weight: 700;
+  font-size: 16px;
+}

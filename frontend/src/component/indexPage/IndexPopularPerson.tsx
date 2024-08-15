@@ -3,6 +3,8 @@ import Heading from '@/component/element/Heading/Heading';
 import { HeadingSize, HeadingType } from '@/component/element/Heading/Heading.props';
 import Button from '@/component/element/Button/Button';
 import { ButtonColor, ButtonSize } from '@/component/element/Button/Button.props';
+import PopularPersonCard from '@/component/element/Card/PopularPersonCard/PopularPersonCard';
+import PopularPersonList from '@/component/element/List/PopularPerson/PopularPersonList';
 
 const IndexPopularPerson = () => {
 	return (
@@ -15,9 +17,10 @@ const IndexPopularPerson = () => {
 					<Button color={ButtonColor.withoutBackground} size={ButtonSize.none}>За неделю</Button>
 				</nav>
 			</div>
-			<div>
-				<IndexPopularPerson />
-				<IndexPopularPerson />
+			<div className={styles.popular__person}>
+				<PopularPersonCard />
+				<PopularPersonCard />
+				<PopularPersonList />
 			</div>
 		</div>
 	);

@@ -1,0 +1,24 @@
+.element {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  padding-top: 12px;
+  padding-bottom: 16px;
+}
+
+.info {
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  & > h3 {
+    opacity: 0.35;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}

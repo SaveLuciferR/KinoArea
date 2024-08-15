@@ -8,7 +8,8 @@ export enum ButtonColor {
 	pageColor = 'page-color',
 	borderPrimary = 'border-primary',
 	borderSecondary = 'border-secondary',
-	withoutBackground = 'without'
+	withoutBackground = 'without',
+	footer = 'footer'
 }
 
 export enum ButtonSize {

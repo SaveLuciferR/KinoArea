@@ -1,0 +1,31 @@
+.card {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 12px;
+}
+
+.img {
+  border-radius: 4px;
+
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.box_office {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.last_weak {
+  color: var(--color-second);
+  opacity: 0.4;
+  font-size: 14px;
+  font-weight: 400;
+}

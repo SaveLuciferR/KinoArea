@@ -68,6 +68,15 @@
     color: var(--color-second);
   }
 
+  &.footer {
+    background-color: var(--warning-info);
+    color: var(--text-primary);
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   &.none {
     background: none;
     padding: 0;

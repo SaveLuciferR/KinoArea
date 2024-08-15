@@ -56,7 +56,9 @@ const IndexNewTrailer = () => {
 					</div>
 				</div>
 				<Slider slides={newTrailerComponents}
-						type={SliderType.scroll} />
+						type={SliderType.scroll}
+						withHeading={false}
+				/>
 			</div>
 		</div>
 	);

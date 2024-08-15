@@ -7,6 +7,9 @@ import IndexNewMovie from '@/component/indexPage/IndexNewMovie';
 import IndexNewTrailer from '@/component/indexPage/IndexNewTrailer';
 import IndexPopularMovie from '@/component/indexPage/IndexPopularMovie';
 import IndexPopularPerson from '@/component/indexPage/IndexPopularPerson';
+import IndexPopularBlog from '@/component/indexPage/IndexPopularBlog';
+import IndexExpectedNovelties from '@/component/indexPage/IndexExpectedNovelties';
+import IndexBoxOfficeReceipts from '@/component/indexPage/IndexBoxOfficeReceipts';
 
 export default function Home() {
 	return (
@@ -16,7 +19,16 @@ export default function Home() {
 					<IndexNewMovie />
 					<IndexNewTrailer />
 					<IndexPopularMovie />
-					{/*<IndexPopularPerson />*/}
+					<IndexPopularPerson />
+					<IndexPopularBlog />
+				</div>
+			</div>
+			<div className={'page-dark'}>
+				<div className={'container'}>
+					<div className={styles.main__inner}>
+						<IndexExpectedNovelties />
+						<IndexBoxOfficeReceipts />
+					</div>
 				</div>
 			</div>
 		</main>

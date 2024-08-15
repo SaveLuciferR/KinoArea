@@ -7,9 +7,11 @@ import { ButtonColor, ButtonSize } from '@/component/element/Button/Button.props
 import { FaArrowLeftLong, FaArrowRightLong } from 'react-icons/fa6';
 import React, { useEffect, useRef, useState } from 'react';
 import Loading from '@/component/element/Loading/Loading';
+import Heading from '@/component/element/Heading/Heading';
+import { HeadingSize, HeadingType } from '@/component/element/Heading/Heading.props';
 
 
-const Slider = ({ type, slides = [] }: SliderProps) => {
+const Slider = ({ type, slides = [], withHeading, title = '' }: SliderProps) => {
 
 	const scrollRef = useRef(null);
 
@@ -34,7 +36,7 @@ const Slider = ({ type, slides = [] }: SliderProps) => {
 	useEffect(() => {
 		if (type === SliderType.scroll) {
 			setWidthSlideTransform(`-${marginScroll}px`); //TODO: не правильно работает слайдер (не все элементы показывает)
-		} else if (type === SliderType.controls) {
+		} else if (type === SliderType.controls || type === SliderType.headingControls) {
 			setWidthSlideTransform(`-${(currentSlide - 1) * 100}%`);
 		}
 	}, [currentSlide, marginScroll]);
@@ -87,6 +89,26 @@ const Slider = ({ type, slides = [] }: SliderProps) => {
 		}
 	};
 
+	const controlButtons = () => {
+		return (
+			<div className={styles.slider_controls}>
+				<Button color={ButtonColor.withoutBackground}
+						size={ButtonSize.none}
+						onClick={() => handlePrevSlide()}
+				>
+					<FaArrowLeftLong size={24} />
+				</Button>
+				<p>{currentSlide}<span>/</span>{amountSlides}</p>
+				<Button color={ButtonColor.withoutBackground}
+						size={ButtonSize.none}
+						onClick={() => handleNextSlide()}
+				>
+					<FaArrowRightLong size={24} />
+				</Button>
+			</div>
+		);
+	};
+
 	if (isLoading) {
 		return (
 			<Loading />
@@ -94,62 +116,58 @@ const Slider = ({ type, slides = [] }: SliderProps) => {
 	}
 
 	return (
-		<div className={styles.slider}>
-			{type === SliderType.scroll ?
-				<div className={styles.slider_scroll}>
-					<div
-						ref={scrollRef}
-						style={{
-							marginLeft: `${marginScroll}px`,
-							width: `${amountElementsOnSlide / slides.length * 100}%`
-						}}
-						onPointerDown={(e) => handlePointerDown(e)}
-						onPointerMove={(e) => handlePointerMove(e)}
-						onPointerUp={(e) => handlePointerUp(e)}
-						onPointerLeave={(e) => handlePointerUp(e)}
-						onContextMenu={(e) => {
-							e.preventDefault();
-							e.stopPropagation();
-						}}
-						onDragStart={(e) => {
-							e.preventDefault();
-							e.stopPropagation();
-							return false;
-						}}
-					></div>
+		<>
+			{withHeading ?
+				<div className={styles.header}>
+					<Heading type={HeadingType.h1} size={HeadingSize.page}>{title}</Heading>
+					{controlButtons()}
 				</div>
 				:
 				<></>
 			}
-			<div className={styles.slider_elements} style={{ transform: `translateX(${widthSlideTransform})` }}>
-				{slides.map((slide, i) => {
-					return (
-						<div key={i} className={styles.slider_item}>
-							{slide}
-						</div>
-					);
-				})}
+			<div className={styles.slider}>
+				{type === SliderType.scroll ?
+					<div className={styles.slider_scroll}>
+						<div
+							ref={scrollRef}
+							style={{
+								marginLeft: `${marginScroll}px`,
+								width: `${amountElementsOnSlide / slides.length * 100}%`
+							}}
+							onPointerDown={(e) => handlePointerDown(e)}
+							onPointerMove={(e) => handlePointerMove(e)}
+							onPointerUp={(e) => handlePointerUp(e)}
+							onPointerLeave={(e) => handlePointerUp(e)}
+							onContextMenu={(e) => {
+								e.preventDefault();
+								e.stopPropagation();
+							}}
+							onDragStart={(e) => {
+								e.preventDefault();
+								e.stopPropagation();
+								return false;
+							}}
+						></div>
+					</div>
+					:
+					<></>
+				}
+				<div className={styles.slider_elements} style={{ transform: `translateX(${widthSlideTransform})` }}>
+					{slides.map((slide, i) => {
+						return (
+							<div key={i} className={styles.slider_item}>
+								{slide}
+							</div>
+						);
+					})}
+				</div>
+				{type === SliderType.controls ?
+					controlButtons()
+					:
+					<></>
+				}
 			</div>
-			{type === SliderType.controls ?
-				<div className={styles.slider_controls}>
-					<Button color={ButtonColor.withoutBackground}
-							size={ButtonSize.none}
-							onClick={() => handlePrevSlide()}
-					>
-						<FaArrowLeftLong size={24} />
-					</Button>
-					<p>{currentSlide}<span>/</span>{amountSlides}</p>
-					<Button color={ButtonColor.withoutBackground}
-							size={ButtonSize.none}
-							onClick={() => handleNextSlide()}
-					>
-						<FaArrowRightLong size={24} />
-					</Button>
-				</div>
-				:
-				<></>
-			}
-		</div>
+		</>
 	);
 };
 

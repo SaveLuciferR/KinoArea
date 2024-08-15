@@ -20,7 +20,8 @@ const MovieCard = () => {
 					Карточка фильма
 				</LinkMyself>
 			}>
-				<Image src={'/assets/test-image/movie-image.jpg'} alt={'movie-card'} width={340} height={500} />
+				<Image src={'/assets/test-image/The_Joker_Poster_1.jpg'} alt={'movie-card'} sizes={'100%'}
+					   style={{ width: '100%', height: 'auto' }} width={150} height={500} />
 				<RatingMovieCard value={8.75} isPercent={false} />
 			</Card>
 			<div className={styles.info}>

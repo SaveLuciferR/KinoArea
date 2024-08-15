@@ -3,8 +3,10 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 40px;
 
     width: 100%;
+
+    padding-bottom: 60px;
   }
 }
